@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laissez Fair Digital Studio | One Page Preview</title>
+  <title>Laissez Fair Digital Studio | STEAM Studio & Digital Readiness</title>
   <meta name="description" content="Laissez Fair Digital Studio provides STEAM Studio and Digital Readiness programs for schools, microschools, homeschools, and community partners." />
   <meta name="theme-color" content="#F6F3ED" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,7 +76,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.1rem 2.5rem;
+      padding: 1rem 1.6rem;
       background: rgba(246, 243, 237, 0.96);
       border-bottom: 1px solid rgba(199, 162, 75, 0.22);
       box-shadow: 0 6px 18px rgba(47, 42, 36, 0.06);
@@ -84,6 +84,8 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(10px);
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .brand {
@@ -128,19 +130,20 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.75rem;
+      gap: 1rem;
       list-style: none;
       margin: 0;
       padding: 0;
+      flex-wrap: wrap;
     }
 
     .nav-links li a {
       position: relative;
       text-decoration: none;
       font-family: 'Inter', 'Segoe UI', sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       font-weight: 600;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       color: #2f2a24;
       transition: color 0.25s ease;
     }
@@ -211,7 +214,7 @@
 
     .gallery-grid { grid-template-columns: repeat(4, 1fr); margin-top: 34px; }
 
-    .gallery-card, .lab-card, .bundle-card, .program-card, .pricing-card, .feature-card, .readiness-card, .info-card {
+    .gallery-card, .lab-card, .bundle-card, .program-card, .pricing-card, .feature-card, .readiness-card {
       background: rgba(255,255,255,0.7);
       border: 1px solid rgba(47,42,36,0.08);
       border-radius: var(--radius);
@@ -239,15 +242,41 @@
     }
     .digital .pill { background: rgba(63,95,78,0.09); border-color: rgba(63,95,78,0.12); }
 
-    .lab-intro, .learning-lab-overview {
+    .lab-intro,
+    .learning-lab-overview {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 28px;
-      align-items: start;
-      margin-top: 38px;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: stretch;
+      margin-top: 42px;
     }
 
-    .lab-intro img, .learning-lab-overview img { border-radius: 24px; min-height: 100%; object-fit: cover; }
+    .lab-intro img,
+    .learning-lab-overview img {
+      border-radius: 24px;
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .learning-lab-overview .info-card {
+      padding: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .learning-lab-overview .info-card h3 {
+      font-size: 2.15rem;
+      margin-bottom: 16px;
+    }
+
+    .learning-lab-overview .info-card p {
+      font-size: 1.02rem;
+    }
     .lab-groups { margin-top: 34px; display: grid; gap: 42px; }
     .group-title { font-size: 1.8rem; margin-bottom: 14px; color: var(--prairie-green); }
     .showcase-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); align-items: stretch; }
@@ -269,11 +298,11 @@
     .price { font-weight: 800; margin-top: auto; padding-top: 10px; }
 
     .bundle-grid, .program-grid, .pricing-grid { margin-top: 34px; grid-template-columns: repeat(2, 1fr); }
-    .bundle-card, .pricing-card, .feature-card, .info-card { padding: 26px; }
+    .bundle-card, .pricing-card, .feature-card { padding: 26px; }
     .program-card, .readiness-card { padding: 0; }
     .program-card img, .readiness-card img { width: 100%; height: 210px; object-fit: cover; display: block; }
     .program-card-body, .readiness-card-body { padding: 26px; }
-    .bundle-card h3, .program-card h3, .pricing-card h3, .feature-card h3, .readiness-card h3, .info-card h3 { font-size: 1.6rem; margin-bottom: 12px; }
+    .bundle-card h3, .program-card h3, .pricing-card h3, .feature-card h3, .readiness-card h3 { font-size: 1.6rem; margin-bottom: 12px; }
 
     .card-list { margin-top: 12px; display: grid; gap: 10px; }
     .card-list div {
@@ -284,9 +313,30 @@
     }
 
     .small-note { margin-top: 12px; color: rgba(47,42,36,0.74); font-size: 0.92rem; }
-    .readiness-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 34px; }
+    .readiness-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 34px;
+    }
+
+    .contact-overview {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 28px;
+      align-items: start;
+      margin-top: 30px;
+    }
+
+    .contact-overview img {
+      border-radius: 24px;
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+    }
+
     .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 34px; }
-    .feature-card p, .bundle-card p, .program-card p, .pricing-card p, .readiness-card p, .info-card p { color: rgba(47,42,36,0.8); }
+    .feature-card p, .bundle-card p, .program-card p, .pricing-card p, .readiness-card p { color: rgba(47,42,36,0.8); }
 
     .cta {
       background: linear-gradient(135deg, var(--wheat-gold), #d8b86a);
@@ -295,7 +345,6 @@
       box-shadow: var(--shadow);
     }
 
-    .footer { padding: 42px 0 60px; color: rgba(47,42,36,0.78); }
     .footer-top {
       border-top: 1px solid rgba(47,42,36,0.08);
       padding-top: 28px;
@@ -309,7 +358,7 @@
     .brand-sub { font-size: 0.78rem; color: rgba(47,42,36,0.72); }
 
     @media (max-width: 1100px) {
-      .hero-grid, .lab-intro, .learning-lab-overview, .readiness-layout { grid-template-columns: 1fr; }
+      .hero-grid, .lab-intro, .learning-lab-overview, .readiness-layout, .contact-overview { grid-template-columns: 1fr; }
       .showcase-grid, .feature-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -333,7 +382,7 @@
 
     @media (max-width: 820px) {
       .offering-grid, .bundle-grid, .program-grid, .pricing-grid, .feature-grid, .showcase-grid { grid-template-columns: 1fr; }
-      .gallery-grid, .stat-row, .readiness-layout { grid-template-columns: 1fr; }
+      .gallery-grid, .stat-row { grid-template-columns: 1fr; }
       .section { padding: 66px 0; }
       .hero { padding-top: 70px; }
       .hero-card img { min-height: 320px; }
@@ -374,11 +423,11 @@
         <div class="btn-row" style="margin-top: 26px;">
           <a class="btn btn-primary" href="#steam-studio">Explore STEAM Labs</a>
           <a class="btn btn-secondary" href="#digital-readiness">View Digital Readiness</a>
-          <a class="btn btn-outline" href="#pricing">See Pricing</a>
+          <a class="btn btn-outline" href="#programs">See Programs</a>
         </div>
         <div class="stat-row">
-          <div class="stat"><strong>15+</strong><span>STEAM Studio labs</span></div>
-          <div class="stat"><strong>4 paths</strong><span>digital readiness areas</span></div>
+          <div class="stat"><strong>14+</strong><span>STEAM Studio labs</span></div>
+          <div class="stat"><strong>4 labs</strong><span>per semester bundle + capstone</span></div>
           <div class="stat"><strong>Flexible</strong><span>school, homeschool, summer, and curriculum models</span></div>
         </div>
       </div>
@@ -436,18 +485,18 @@
   </section>
 
   <section id="steam-studio" class="section">
-    <div class="container" id="labs">
+    <div class="container">
       <span class="eyebrow">STEAM Studio</span>
       <h2 class="section-title">STEAM Studio labs for flexible K–12 implementation.</h2>
-      <p class="section-subtitle">STEAM Studio is one of the studio's main program offerings. These fifteen labs are designed as flexible 4–6 week experiences at roughly 30 hours total and can run as workshops, camps, a la carte school experiences, quarter bundles, or semester pathways. <strong>CoSpaces EDU (Delightex)</strong> is the core platform used across labs for immersive world-building, simulations, and interactive systems—supported by tools like Scratch, VS Code, Canva, Tinkercad, and Arduino depending on the lab.</p>
+      <p class="section-subtitle">STEAM Studio is one of the studio’s main program offerings. These fourteen labs are designed as flexible 4–6 week experiences at roughly 30 hours total and can run as workshops, camps, a la carte school experiences, quarter bundles, or semester pathways.</p>
 
       <div class="lab-intro">
         <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80" alt="Students working together in a STEAM Studio learning environment" />
         <div class="feature-card">
           <h3>How the lab model works</h3>
-          <p><strong>Core Platform:</strong> CoSpaces EDU (Delightex) anchors STEAM Studio. Students build interactive 3D worlds, simulations, and projects using block coding and JavaScript, then extend their work with complementary tools.</p>
+          <p>Each lab includes guided instruction, project cards, videos or demonstrations, applied builds, portfolio artifacts, and age-appropriate assessments or reflections.</p>
           <div class="card-list">
-            <div><strong>Core Platform:</strong> CoSpaces EDU (Delightex) for immersive builds, simulations, and interactive systems</div>
+            <div><strong>Format:</strong> 4–6 weeks or condensed workshop/camp</div>
             <div><strong>Time:</strong> ~30 hours total per lab</div>
             <div><strong>Use cases:</strong> school enrichment, homeschool pods, summer camps, self-paced curriculum, semester pathways</div>
             <div><strong>Pricing:</strong> most labs range from $150–$400 as a 4–6 week lab depending on complexity and equipment</div>
@@ -455,11 +504,10 @@
         </div>
       </div>
 
-      <div id="labs" class="lab-groups">
+      <div class="lab-groups">
         <div>
           <h3 class="group-title">Media &amp; Creative Labs</h3>
           <div class="showcase-grid">
-            <article class="lab-card"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Teen using social media on phone" /><div class="lab-card-body"><h4>Digital Citizenship & Social Media Awareness Lab</h4><p>Students learn how to navigate social media responsibly, build a positive digital footprint, identify misinformation, and understand online safety, privacy, and reputation management.</p><div class="meta"><span>4–6 weeks</span><span>Digital safety • Media literacy • Online identity</span></div><p class="price">Lab: $175–$300 • Camp: $300–$500</p></div></article>
             <article class="lab-card"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Teen creating video content" /><div class="lab-card-body"><h4>Content Creation Lab</h4><p>Students create short-form videos, story-driven content, and digital campaigns.</p><div class="meta"><span>4–6 weeks</span><span>CapCut • Canva • Pixlr</span></div><p class="price">Lab: $150–$250 • Camp: $200–$350</p></div></article>
             <article class="lab-card"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Students working on digital design" /><div class="lab-card-body"><h4>Digital Design Lab</h4><p>Branding, layout, campaign graphics, posters, and visual communication projects.</p><div class="meta"><span>4–6 weeks</span><span>Canva • Pixlr</span></div><p class="price">Lab: $150–$275 • Camp: $250–$400</p></div></article>
             <article class="lab-card"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=900&q=80" alt="Teen student recording audio for a podcast" /><div class="lab-card-body"><h4>Podcasting &amp; Audio Production Lab</h4><p>Podcast episodes, voiceovers, audio storytelling, and soundtrack work for projects and videos.</p><div class="meta"><span>4–6 weeks</span><span>CapCut • recording tools</span></div><p class="price">Lab: $150–$275 • Camp: $250–$400</p></div></article>
@@ -531,17 +579,45 @@
       <h2 class="section-title">Digital skills pathways beyond STEAM Studio.</h2>
       <p class="section-subtitle">In addition to K–12 STEAM Studio, the studio offers Digital Readiness programs that support digital confidence, family safety, college and career preparation, and workforce fluency.</p>
       <div class="readiness-layout">
-        <article class="readiness-card"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Learner building digital literacy skills on a laptop" /><div class="readiness-card-body"><h3>Digital Foundations &amp; Security Literacy</h3><p>Safe browsing, device confidence, email, cloud tools, file management, passwords, 2FA, and scam awareness.</p></div></article>
-        <article class="readiness-card"><img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80" alt="Parent and child using technology together" /><div class="readiness-card-body"><h3>Digital Parenting Education</h3><p>Guidance for families on apps, social media, gaming platforms, digital citizenship, and safety tools.</p></div></article>
-        <article class="readiness-card"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Students working on college and career planning materials" /><div class="readiness-card-body"><h3>College &amp; Career Readiness</h3><p>Resumes, portfolios, scholarships, professional writing, and exposure to career-connected technology skills.</p></div></article>
-        <article class="readiness-card"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80" alt="Professional using digital tools for work and productivity" /><div class="readiness-card-body"><h3>Workforce Readiness &amp; Emerging Technologies</h3><p>Microsoft 365, Google Workspace, AI productivity, cloud exposure, CRM awareness, and practical digital workflows.</p></div></article>
+        <article class="readiness-card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Learner building digital literacy skills on a laptop" />
+          <div class="readiness-card-body">
+            <h3>Digital Foundations &amp; Security Literacy</h3>
+            <p>Safe browsing, device confidence, email, cloud tools, file management, passwords, 2FA, and scam awareness.</p>
+          </div>
+        </article>
+        <article class="readiness-card">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Parent and child using technology together" />
+          <div class="readiness-card-body">
+            <h3>Digital Parenting Education</h3>
+            <p>Guidance for families on apps, social media, gaming platforms, digital citizenship, and safety tools.</p>
+          </div>
+        </article>
+        <article class="readiness-card">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Students working on college and career planning materials" />
+          <div class="readiness-card-body">
+            <h3>College &amp; Career Readiness</h3>
+            <p>Resumes, portfolios, scholarships, professional writing, and exposure to career-connected technology skills.</p>
+          </div>
+        </article>
+        <article class="readiness-card">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80" alt="Professional using digital tools for work and productivity" />
+          <div class="readiness-card-body">
+            <h3>Workforce Readiness &amp; Emerging Technologies</h3>
+            <p>Microsoft 365, Google Workspace, AI productivity, cloud exposure, CRM awareness, and practical digital workflows.</p>
+          </div>
+        </article>
       </div>
-
       <div class="learning-lab-overview">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Adult learners collaborating in a digital learning environment" />
+        <img
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+          alt="Adult learners collaborating in a digital learning environment"
+        />
         <div class="info-card">
           <h3>Digital Learning Lab model</h3>
-          <p>Our Digital Readiness model is built as a Digital Learning Lab, allowing participants to access structured learning pathways while receiving real-time support both in person and virtually.</p>
+          <p>
+            Our Digital Readiness model is built as a Digital Learning Lab, allowing participants to access structured learning pathways while receiving real-time support both in person and virtually.
+          </p>
           <div class="card-list">
             <div><strong>Self-Paced Learning:</strong> Structured modules through Canvas with lessons, guided activities, and completion-based progress tracking</div>
             <div><strong>In-Person Support:</strong> Scheduled sessions for demonstrations, walkthroughs, and hands-on assistance</div>
@@ -557,7 +633,10 @@
     <div class="container">
       <span class="eyebrow">Pricing</span>
       <h2 class="section-title">Flexible pricing for labs, bundles, and supported digital learning.</h2>
-      <p class="section-subtitle">Whether you need individual STEAM labs, quarter bundles, semester pathways, or a supported Digital Learning Lab model, pricing can be structured around delivery, duration, and partner capacity.</p>
+      <p class="section-subtitle">
+        Whether you need individual STEAM labs, quarter bundles, semester pathways, or a supported Digital Learning Lab model, pricing can be structured around delivery, duration, and partner capacity.
+      </p>
+
       <div class="pricing-grid">
         <article class="pricing-card">
           <h3>Starter Pilot</h3>
@@ -570,6 +649,18 @@
             <div>Participant support guides</div>
           </div>
         </article>
+
+        <article class="pricing-card">
+          <h3>STEAM Studio Pricing</h3>
+          <p>Flexible pricing for labs, bundles, and pathway-based implementation.</p>
+          <div class="card-list">
+            <div>Individual labs: typically $150–$400</div>
+            <div>Quarter bundles: typically $600–$1,500 per classroom</div>
+            <div>Semester programs: typically $1,800–$4,000 per classroom</div>
+            <div>Final pricing depends on delivery, staffing, equipment, and schedule</div>
+          </div>
+        </article>
+
         <article class="pricing-card">
           <h3>Growth Program</h3>
           <p>$3,000–$4,500/month</p>
@@ -581,6 +672,7 @@
             <div>Ideal for libraries and workforce programs</div>
           </div>
         </article>
+
         <article class="pricing-card">
           <h3>Full Learning Lab</h3>
           <p>$4,500–$6,000/month</p>
@@ -590,16 +682,6 @@
             <div>Ongoing in-person and virtual support</div>
             <div>Scalable for larger organizations</div>
             <div>Strong fit for city or multi-site programs</div>
-          </div>
-        </article>
-        <article class="pricing-card">
-          <h3>STEAM Studio Delivery</h3>
-          <p>Custom by model</p>
-          <div class="card-list">
-            <div>Single labs: typically $150–$400 per 4–6 week lab</div>
-            <div>Quarter bundles: typically $600–$1,500 per classroom</div>
-            <div>Semester pathways: typically $1,800–$4,000 hybrid per classroom</div>
-            <div>Scaled by delivery type, equipment, and partner goals</div>
           </div>
         </article>
       </div>
@@ -621,21 +703,25 @@
 
   <section id="about" class="section">
     <div class="container">
-      <span class="eyebrow">About the studio</span>
-      <h2 class="section-title">Built by an educator focused on real-world digital readiness.</h2>
+      <span class="eyebrow">About</span>
+      <h2 class="section-title">Kory Ricketts</h2>
 
-      <div class="learning-lab-overview">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Instructor working with students" />
-
+      <div class="contact-overview">
+        <img
+          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
+          alt="Educator leading a collaborative session"
+        />
         <div class="info-card">
-          <h3>Professional Bio</h3>
-
-          <p>Kory Ricketts is the founder of <strong>Laissez Fair Digital Studio</strong>, a community-focused technology education initiative dedicated to expanding access to digital literacy, STEAM learning, and workforce readiness programs.</p>
-
-          <p>He serves as a STEAM Studio Coordinator and Technology Manager, where he leads project-based learning experiences and supports the integration of technology across learning environments. He also works as an IT Support Technician and holds a CompTIA IT Fundamentals (ITF+) certification.</p>
-
-          <p>Kory specializes in building scalable education systems that connect foundational digital skills with real-world application. Through Laissez Fair Digital Studio, he partners with schools, libraries, and community organizations to deliver structured, flexible, and immersive learning programs.</p>
-
+          <h3>Founder / Program Director</h3>
+          <p style="margin-top:12px;">
+            Kory Ricketts is the founder of Laissez Fair Digital Studio, a community-focused technology education initiative dedicated to expanding access to digital literacy, STEAM learning, and workforce readiness programs.
+          </p>
+          <p>
+            He serves as a STEAM Studio Coordinator and Technology Manager, where he leads project-based learning experiences and supports the integration of technology across learning environments. He also works as an IT Support Technician and holds a CompTIA IT Fundamentals (ITF+) certification.
+          </p>
+          <p>
+            Kory specializes in building scalable education systems that connect foundational digital skills with real-world application. Through Laissez Fair Digital Studio, he partners with schools, libraries, and community organizations to deliver structured, flexible, and immersive learning programs.
+          </p>
         </div>
       </div>
     </div>
@@ -643,32 +729,21 @@
 
   <section id="contact" class="section">
     <div class="container">
-      <div class="cta">
-        <span class="eyebrow" style="color: rgba(47,42,36,0.72);">Let’s build your program mix</span>
-        <h2 class="section-title" style="margin-bottom: 12px;">Launch with labs, bundles, or full pathways.</h2>
-        <p class="section-subtitle" style="max-width: 720px; margin-bottom: 24px;">Whether you need STEAM Studio for K–12 learners, Digital Readiness for older students and families, or a hybrid microschool implementation, the studio can be structured around your learners and delivery model.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="mailto:contact@laissezfairdigitalstudio.com">Start a Conversation</a>
-          <a class="btn btn-outline" href="#steam-studio">Review Labs</a>
+      <span class="eyebrow">Contact</span>
+      <h2 class="section-title">Let's connect and build something together.</h2>
+      <div class="contact-overview">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Professional meeting and partnership conversation" />
+        <div class="info-card">
+          <h3>Direct Contact</h3>
+          <p style="margin-top:12px;"><strong>Phone:</strong> <a href="tel:13212479864">(321) 247-9864</a></p>
+          <p><strong>Email:</strong> <a href="mailto:kricketts@laissezfairstudio.com">kricketts@laissezfairstudio.com</a></p>
+          <p class="small-note">Reach out for partnerships, school programs, workshops, or Digital Learning Lab implementation.</p>
+          <div style="margin-top: 22px;">
+            <a href="https://form.jotform.com/261054270112038" target="_blank" class="btn btn-primary">Submit Inquiry Form</a>
+          </div>
         </div>
       </div>
-      <div class="info-card" style="margin-top:20px;">
-        <h3>Direct Contact</h3>
-
-        <p><strong>Phone:</strong> 
-          <a href="tel:13212479864">(321) 247-9864</a>
-        </p>
-
-        <p><strong>Email:</strong> 
-          <a href="mailto:kricketts@laissezfairstudio.com">
-            kricketts@laissezfairstudio.com
-          </a>
-        </p>
-
-        <p class="small-note">
-          Reach out for partnerships, school programs, workshops, or Digital Learning Lab implementation.
-        </p>
-      </div>    </div>
+    </div>
   </section>
 
   <footer class="footer">
