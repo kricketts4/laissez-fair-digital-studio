@@ -181,8 +181,8 @@
       align-items: center;
     }
 
-    .hero h1 { font-size: clamp(2.25rem, 4vw, 4.75rem); margin-bottom: 14px; }
-    .hero p { font-size: 1.06rem; color: rgba(47,42,36,0.84); margin-bottom: 14px; max-width: 760px; }
+    .hero h1 { font-size: clamp(2.8rem, 5vw, 5.25rem); margin-bottom: 14px; max-width: 780px; line-height: 1.05; }
+    .hero p { font-size: clamp(1rem, 1.4vw, 1.2rem); color: rgba(47,42,36,0.84); margin-bottom: 14px; max-width: 760px; line-height: 1.65; }
 
     .stat-row {
       display: flex;
@@ -257,11 +257,11 @@
     .gallery-card img { height: 250px; object-fit: cover; }
     .gallery-card .caption { padding: 16px; font-weight: 600; }
 
-    .offering-grid { grid-template-columns: repeat(2, 1fr); margin-top: 40px; }
+    .offering-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 40px; }
     .offering-card { padding: 30px; }
     .offering-card.steam { background: linear-gradient(180deg, var(--prairie-green), #30493c); color: #fff; }
     .offering-card.digital { background: linear-gradient(180deg, #fff, #f4efe7); }
-    .offering-card h3 { font-size: 2rem; margin-bottom: 14px; }
+    .offering-card.h3, .offering-card h3 { font-size: 2rem; margin-bottom: 14px; }
 
     .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 16px; }
     .pill {
@@ -374,6 +374,28 @@
       border-color: var(--wheat-gold);
     }
 
+    .lfda-hero-title {
+      display: block;
+      line-height: 1.08;
+    }
+
+    .lfda-first-line {
+      display: block;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 700;
+    }
+
+    .lfda-second-line {
+      display: block;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: clamp(1.15rem, 2.4vw, 2rem);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--prairie-green);
+      margin-top: 8px;
+    }
+
     .lfda-overview-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -396,6 +418,23 @@
     .lfda-split article {
       display: grid;
       gap: 14px;
+    }
+
+    .lfda-intro {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: start;
+      margin-top: 28px;
+    }
+
+    .lfda-intro-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      border-radius: 24px;
+      object-fit: cover;
+      display: block;
     }
 
     .seasonal-panel {
@@ -526,8 +565,16 @@
 
     .contact-card .btn { margin-top: 14px; }
 
+    .contact-card .btn-primary {
+      color: #fff;
+      display: inline-flex;
+      visibility: visible;
+      opacity: 1;
+    }
+
     @media (max-width: 1100px) {
-      .hero-grid, .lab-intro, .readiness-layout, .lfda-overview-grid, .readiness-row, .lfda-split, .contact-grid, .pricing-grid, .tuition-grid { grid-template-columns: 1fr; }
+      .hero-grid, .lab-intro, .readiness-layout, .lfda-overview-grid, .readiness-row, .lfda-split, .contact-grid, .pricing-grid, .tuition-grid, .lfda-intro { grid-template-columns: 1fr; }
+      .offering-grid { grid-template-columns: repeat(2, 1fr); }
       .showcase-grid, .feature-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -622,8 +669,8 @@
 
   <section id="offerings" class="section">
     <div class="container">
-      <span class="eyebrow">Two core offerings</span>
-      <h2 class="section-title">One studio. Two distinct program systems.</h2>
+      <span class="eyebrow">Three core offerings</span>
+      <h2 class="section-title">One studio. Three connected learning experiences.</h2>
       <div class="offering-grid">
         <article class="offering-card steam">
           <h3>STEAM Studio</h3>
@@ -636,6 +683,18 @@
           </div>
           <p>Labs can be booked individually, grouped into quarterly bundles, or delivered as semester programs with capstones. High school pathways can be structured as credit-aligned coursework through school partners.</p>
           <div class="btn-row" style="margin-top:18px;"><a class="btn btn-secondary" href="#steam-studio">View STEAM Labs</a></div>
+        </article>
+        <article class="offering-card lfda">
+          <h3>Laissez Fair Digital Academy</h3>
+          <p>A Montessori-inspired microschool experience for learners ages 10 and older that combines personalized academics with hands-on STEAM electives and enrichment.</p>
+          <div class="pill-row">
+            <span class="pill">CoreWorks</span>
+            <span class="pill">TechQuest</span>
+            <span class="pill">Ages 10+</span>
+            <span class="pill">Microschool</span>
+          </div>
+          <p>Learners participate in small-group academics, applied STEAM projects, digital citizenship, collaboration, creative technology, and portfolio-based learning.</p>
+          <div class="btn-row" style="margin-top:18px;"><a class="btn btn-secondary" href="#lfda">Explore LFDA</a></div>
         </article>
         <article class="offering-card digital">
           <h3>Digital Readiness</h3>
@@ -780,14 +839,27 @@
 
   <section id="lfda" class="section">
     <div class="container">
-      <span class="eyebrow">Laissez Fair Digital Academy</span>
-      <h2 class="section-title">An academy for independent thinkers, creative builders, and future-ready learners.</h2>
-      <p class="section-subtitle">Laissez Fair Digital Academy combines personalized academic support with project-based STEAM, digital design, and creative technology experiences in a flexible, Montessori-inspired learning environment.</p>
-      <p class="small-note">Laissez Fair Digital Academy is an educational program operated by Laissez Fair Digital Studio LLC.</p>
-      <div class="btn-row" style="margin-top:24px;">
-        <a class="btn btn-primary" href="https://form.jotform.com/261656585418064" target="_blank" rel="noopener noreferrer">Begin LFDA Enrollment</a>
-        <a class="btn btn-secondary" href="https://form.jotform.com/261974304802053" target="_blank" rel="noopener noreferrer">Register for the Back-to-School Intensive</a>
-        <a class="btn btn-outline" href="#day-at-lfda">Explore a Day at LFDA</a>
+      <div class="lfda-intro">
+        <div>
+          <h2 class="section-title lfda-hero-title">
+            <span class="lfda-first-line">Laissez Fair</span>
+            <span class="lfda-second-line">DIGITAL ACADEMY</span>
+          </h2>
+          <p class="section-subtitle">A Montessori-inspired learning community offering personalized academics, hands-on STEAM electives, and enrichment experiences that prepare modern learners to create, explore, and thrive.</p>
+          <p class="small-note">Laissez Fair Digital Academy is an educational program operated by Laissez Fair Digital Studio LLC.</p>
+          <div class="btn-row" style="margin-top:24px;">
+            <a class="btn btn-primary" href="https://form.jotform.com/261656585418064" target="_blank" rel="noopener noreferrer">Begin LFDA Enrollment</a>
+            <a class="btn btn-secondary" href="https://form.jotform.com/261974304802053" target="_blank" rel="noopener noreferrer">Register for the Back-to-School Intensive</a>
+            <a class="btn btn-outline" href="#day-at-lfda">Explore a Day at LFDA</a>
+          </div>
+        </div>
+        <div class="lfda-intro-image">
+          <img
+            src="https://images.unsplash.com/photo-1548125119-57853b9b0f07?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+            alt="Middle school learners exploring immersive technology together during a hands-on STEAM activity."
+            loading="lazy"
+          />
+        </div>
       </div>
       <nav class="section-subnav">
         <a href="#lfda-overview">Overview</a>
