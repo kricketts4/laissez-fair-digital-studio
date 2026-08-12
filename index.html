@@ -534,6 +534,119 @@
 
     .bundle-accordion .bundle-price { color: rgba(47,42,36,0.72); font-weight: 600; }
 
+    .makers-lab-section {
+      background: linear-gradient(180deg, rgba(143,166,160,0.12), rgba(199,162,75,0.09));
+    }
+
+    .makers-lab-intro {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 34px;
+    }
+
+    .makers-lab-panel {
+      padding: 28px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(47,42,36,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .makers-lab-panel h3 { margin-bottom: 14px; }
+
+    .makers-lab-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .makers-lab-list div {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(63,95,78,0.07);
+      border: 1px solid rgba(63,95,78,0.08);
+    }
+
+    .makers-schedule {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .makers-schedule span {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: var(--prairie-green);
+      color: #fff;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .maker-price-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+      align-items: stretch;
+    }
+
+    .maker-price-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 230px;
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(47,42,36,0.09);
+    }
+
+    .maker-price-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+    .maker-price-card .maker-price { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--prairie-green); }
+    .maker-price-card p { margin-top: 10px; color: rgba(47,42,36,0.78); }
+
+    .maker-price-card.featured {
+      background: linear-gradient(180deg, var(--prairie-green), #30493c);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: var(--shadow);
+      transform: translateY(-8px);
+    }
+
+    .maker-price-card.featured .maker-price,
+    .maker-price-card.featured p { color: #fff; }
+
+    .maker-badge {
+      align-self: flex-start;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--wheat-gold);
+      color: var(--ink-brown);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .makers-sibling-offer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 26px;
+      padding: 26px 28px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(199,162,75,0.22), rgba(255,255,255,0.92));
+      border: 1px solid rgba(199,162,75,0.25);
+    }
+
+    .makers-sibling-offer h3 { margin-bottom: 8px; }
+    .makers-sibling-price { flex-shrink: 0; font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--prairie-green); }
+
     .about-grid {
       display: grid;
       grid-template-columns: 0.95fr 1.05fr;
@@ -573,8 +686,9 @@
     }
 
     @media (max-width: 1100px) {
-      .hero-grid, .lab-intro, .readiness-layout, .lfda-overview-grid, .readiness-row, .lfda-split, .contact-grid, .pricing-grid, .tuition-grid, .lfda-intro { grid-template-columns: 1fr; }
+      .hero-grid, .lab-intro, .readiness-layout, .lfda-overview-grid, .readiness-row, .lfda-split, .contact-grid, .pricing-grid, .tuition-grid, .lfda-intro, .makers-lab-intro { grid-template-columns: 1fr; }
       .offering-grid { grid-template-columns: repeat(2, 1fr); }
+      .maker-price-grid { grid-template-columns: repeat(2, 1fr); }
       .showcase-grid, .feature-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -597,8 +711,10 @@
     }
 
     @media (max-width: 820px) {
-      .offering-grid, .bundle-grid, .program-grid, .pricing-grid, .feature-grid, .showcase-grid { grid-template-columns: 1fr; }
+      .offering-grid, .bundle-grid, .program-grid, .pricing-grid, .feature-grid, .showcase-grid, .maker-price-grid { grid-template-columns: 1fr; }
       .gallery-grid, .stat-row { grid-template-columns: 1fr; }
+      .maker-price-card.featured { transform: none; }
+      .makers-sibling-offer { align-items: flex-start; flex-direction: column; }
       .section { padding: 66px 0; }
       .hero { padding-top: 70px; }
       .hero-card img { min-height: 320px; }
@@ -995,6 +1111,78 @@
           </div>
           <p class="small-note">Placement may consider age, readiness, academic needs, learning profile, and program fit.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="social-makers-lab" class="section makers-lab-section">
+    <div class="container">
+      <span class="eyebrow">Social enrichment + open makerspace</span>
+      <h2 class="section-title">Social Makers Lab</h2>
+      <p class="section-subtitle">A flexible, interest-based makerspace where homeschool and independent learners can meet peers, build friendships, explore shared interests, and collaborate on creative STEAM projects—without changing the academic curriculum their family already uses.</p>
+
+      <div class="makers-lab-intro">
+        <div class="makers-lab-panel">
+          <h3>A place to create, connect, and belong.</h3>
+          <p>Learners can bring an idea, join a collaborative build, use the computer lab, or explore a new technology alongside other students their age. The emphasis is on positive social connection, creative freedom, teamwork, and hands-on learning.</p>
+          <div class="makers-lab-list">
+            <div><strong>Open computer lab:</strong> coding, digital design, game creation, research, and media projects.</div>
+            <div><strong>Hands-on making:</strong> robotics, engineering, electronics, 3D design, prototyping, and creative builds.</div>
+            <div><strong>Collaborative projects:</strong> learners can work together around shared interests, challenges, and original ideas.</div>
+            <div><strong>Social enrichment:</strong> consistent time with peers helps learners develop friendships, confidence, and teamwork skills.</div>
+          </div>
+        </div>
+
+        <div class="makers-lab-panel">
+          <span class="eyebrow">Flexible attendance</span>
+          <h3>Designed for families using their own curriculum.</h3>
+          <p>Social Makers Lab can complement an existing homeschool program, virtual curriculum, or independent academic plan. Families choose a consistent one-, two-, or three-day schedule, with drop-in attendance available when space permits.</p>
+          <div class="makers-schedule">
+            <span>Monday–Thursday</span>
+            <span>9:00 AM–12:00 PM</span>
+            <span>12:00–3:00 PM</span>
+            <span>3-hour blocks</span>
+          </div>
+          <p class="small-note">Morning participation takes place alongside the TechQuest Lab environment. Afternoon availability and project options may vary by day, enrollment, and space.</p>
+          <div class="btn-row" style="margin-top:22px;">
+            <a class="btn btn-primary" href="https://form.jotform.com/261054270112038" target="_blank" rel="noopener noreferrer">Ask About Social Makers Lab</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="maker-price-grid">
+        <article class="maker-price-card">
+          <h3>1 Day Per Week</h3>
+          <div class="maker-price">$175<span style="font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:600;">/month</span></div>
+          <p>One consistent three-hour makerspace block each week.</p>
+        </article>
+
+        <article class="maker-price-card featured">
+          <span class="maker-badge">Recommended</span>
+          <h3>2 Days Per Week</h3>
+          <div class="maker-price">$300<span style="font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:600;">/month</span></div>
+          <p>Our main option for consistent projects, stronger peer connections, and time to develop lasting friendships.</p>
+        </article>
+
+        <article class="maker-price-card">
+          <h3>3 Days Per Week</h3>
+          <div class="maker-price">$400<span style="font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:600;">/month</span></div>
+          <p>More time for ongoing builds, deeper exploration, and regular collaboration.</p>
+        </article>
+
+        <article class="maker-price-card">
+          <h3>Drop-In Day</h3>
+          <div class="maker-price">$50<span style="font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:600;">/day</span></div>
+          <p>A single three-hour session, available when space permits.</p>
+        </article>
+      </div>
+
+      <div class="makers-sibling-offer">
+        <div>
+          <h3>Sibling rate</h3>
+          <p>Two siblings can attend Social Makers Lab two days per week at a reduced combined monthly rate.</p>
+        </div>
+        <div class="makers-sibling-price">$500/month total</div>
       </div>
     </div>
   </section>
